@@ -23,8 +23,19 @@ Traveller.prototype.calculateTotalDistanceTravelled = function () {
 };
 
 Traveller.prototype.getUniqueModesOfTransport = function () {
-  const transportaions = this.journeys.map(journey => journey.transport);
-  return transportaions.filter((transportaion, i, transportaions) => transportaions.indexOf(transportaion) === i);
+  const transportations = this.journeys.map(journey => journey.transport);
+
+  // let seenTransports = []
+  // return transportations.filter((transportation) => {
+  //   if (seenTransports.includes(transportation)) {
+  //     return false;
+  //   } else {
+  //     seenTransports.push(transportation);
+  //     return true;
+  //   }
+  // });
+
+  return transportations.filter((transportation, i) => transportations.indexOf(transportation) === i);
 };
 
 
